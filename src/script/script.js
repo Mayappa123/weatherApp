@@ -5,12 +5,15 @@ async function getWeather() {
 
   if (!city) {
     const errorMessage = document.createElement("p");
-    errorMessage.style.color = "red";
+    errorMessage.classList.add("error-message");
     errorMessage.textContent = "Please enter a city name";
     result.innerHTML = "";
     result.appendChild(errorMessage);
     setTimeout(() => {
-      result.removeChild(errorMessage);
+      errorMessage.classList.add("hidden");
+      setTimeout(() => {
+        result.removeChild(errorMessage);
+      }, 1500);
     }, 1500);
     return;
   }
@@ -27,7 +30,7 @@ async function getWeather() {
     displayWeather(data);
   } catch (error) {
     const errorMessage = document.createElement("p");
-    errorMessage.style.color = "red";
+    errorMessage.classList.add("error-message")
     errorMessage.textContent = error.message;
     result.innerHTML = "";
     result.appendChild(errorMessage);
