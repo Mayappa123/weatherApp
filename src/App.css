@@ -31,7 +31,7 @@ h1 {
 
 .date-time {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   gap: 20px;
 }
 
