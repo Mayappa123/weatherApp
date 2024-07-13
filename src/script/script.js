@@ -30,7 +30,7 @@ async function getWeather() {
     displayWeather(data);
   } catch (error) {
     const errorMessage = document.createElement("p");
-    errorMessage.classList.add("error-message")
+    errorMessage.classList.add("error-message");
     errorMessage.textContent = error.message;
     result.innerHTML = "";
     result.appendChild(errorMessage);
