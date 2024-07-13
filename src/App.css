@@ -1,4 +1,3 @@
-/* Global Styles */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
@@ -69,7 +68,7 @@ button {
 }
 
 button:hover {
-  background-color: #083553;
+  background-color: #0b2c42;
 }
 
 .weather-result {
