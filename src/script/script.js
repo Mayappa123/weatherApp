@@ -23,7 +23,7 @@ async function getWeather() {
   try {
     const response = await fetch(apiUrl);
     if (!response.ok) {
-      throw new Error("City not found");
+      throw new Error("Invalid city name");
     }
 
     const data = await response.json();
