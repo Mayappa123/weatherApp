@@ -17,11 +17,11 @@ function App() {
       <div className="container">
         <h1>WEATHER APP</h1>
         <div className="date-time">
-          <p>{dateTime.toLocaleDateString()}</p>
-          <p>{dateTime.toLocaleTimeString()}</p>
+          <p className="digital">{dateTime.toLocaleDateString()}</p>
+          <p className="digital">{dateTime.toLocaleTimeString()}</p>
         </div>
         <div className="search-box">
-          <input type="text" id="city-input" placeholder="Enter city name" />
+          <input type="text" id="city-input" placeholder="search city" />
           <button onClick={getWeather}>Search</button>
         </div>
         <div id="weather-result" className="weather-result"></div>

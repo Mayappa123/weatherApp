@@ -24,6 +24,7 @@ async function getWeather() {
     const response = await fetch(apiUrl);
     if (!response.ok) {
       throw new Error("Invalid city name");
+
     }
 
     const data = await response.json();
@@ -34,6 +35,7 @@ async function getWeather() {
     errorMessage.textContent = error.message;
     result.innerHTML = "";
     result.appendChild(errorMessage);
+    document.getElementById("city-input").value = "";
     setTimeout(() => {
       result.removeChild(errorMessage);
     }, 1500);
@@ -47,7 +49,7 @@ function displayWeather(data) {
 
   weatherResult.innerHTML = `
     <h2>${data.name}, ${data.sys.country}</h2>
-    <p>Temperature: ${temperatureCelsius}°C</p>
+    <p>Temperature: ${temperatureCelsius} °C</p>
     <p>Weather: ${data.weather[0].description}</p>
     <p>Humidity: ${data.main.humidity}%</p>
     <p>Wind Speed: ${data.wind.speed} m/s</p>
