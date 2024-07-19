@@ -45,9 +45,6 @@ function displayWeather(data) {
   const temperatureKelvin = data.main.temp;
   const temperatureCelsius = (temperatureKelvin - 273.15).toFixed(2);
 
-  console.log(`Temperature in Kelvin: ${temperatureKelvin}`);
-  console.log(`Temperature in Celsius: ${temperatureCelsius}`);
-
   weatherResult.innerHTML = `
     <h2>${data.name}, ${data.sys.country}</h2>
     <p>Temperature: ${temperatureCelsius}°C</p>
@@ -55,6 +52,18 @@ function displayWeather(data) {
     <p>Humidity: ${data.main.humidity}%</p>
     <p>Wind Speed: ${data.wind.speed} m/s</p>
   `;
+
+  document
+    .getElementById("clear-button")
+    .addEventListener("click", clearWeather);
+
+  document.getElementById("clear-button").style.display = "block";
+}
+
+function clearWeather() {
+  document.getElementById("weather-result").innerHTML = "";
+  document.getElementById("city-input").value = "";
+  document.getElementById("clear-button").style.display = "none";
 }
 
 window.getWeather = getWeather;

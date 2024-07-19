@@ -25,6 +25,7 @@ function App() {
           <button onClick={getWeather}>Search</button>
         </div>
         <div id="weather-result" className="weather-result"></div>
+        <button id="clear-button">Clear</button>
       </div>
     </>
   );
