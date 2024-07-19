@@ -12,10 +12,6 @@ Check out the live demo [here](https://your-live-link.com)
 - Display weather information such as temperature, humidity, wind speed, and weather description
 - Responsive design for a great user experience on all devices
 
-## Screenshots
-
-![Weather App Screenshot](path/to/your/screenshot.png)
-
 ## Installation
 
 Follow these steps to get the project running on your local machine.
