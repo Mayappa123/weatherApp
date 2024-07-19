@@ -43,16 +43,48 @@ async function getWeather() {
 }
 
 function displayWeather(data) {
+  console.log(data);
   const weatherResult = document.getElementById("weather-result");
-  const temperatureKelvin = data.main.temp;
-  const temperatureCelsius = (temperatureKelvin - 273.15).toFixed(2);
+   const tempMin = (data.main.temp_min - 273.15).toFixed(2);
+   const tempMax = (data.main.temp_max - 273.15).toFixed(2);
+   const feelsLike = (data.main.feels_like - 273.15).toFixed(2);
 
   weatherResult.innerHTML = `
     <h2>${data.name}, ${data.sys.country}</h2>
-    <p>Temperature: ${temperatureCelsius} °C</p>
-    <p>Weather: ${data.weather[0].description}</p>
-    <p>Humidity: ${data.main.humidity}%</p>
-    <p>Wind Speed: ${data.wind.speed} m/s</p>
+    <table>
+      <tr>
+        <th>Weather</th>
+        <td>${data.weather[0].description}</td>
+      </tr>
+      <tr>
+        <th>Feels Like</th>
+        <td>${feelsLike} °C</td>
+      </tr>
+      <tr>
+        <th>Humidity</th>
+        <td>${data.main.humidity}%</td>
+      </tr>
+      <tr>
+        <th>Air Pressure</th>
+        <td>${data.main.pressure} hPa</td>
+      </tr>
+      <tr>
+        <th>Min Temperature</th>
+        <td>${tempMin} °C</td>
+      </tr>
+      <tr>
+        <th>Max Temperature</th>
+        <td>${tempMax} °C</td>
+      </tr>
+      <tr>
+        <th>Wind Speed</th>
+        <td>${data.wind.speed} m/s</td>
+      </tr>
+      <tr>
+        <th>Wind Direction</th>
+        <td>${data.wind.deg}°</td>
+      </tr>
+    </table>
   `;
 
   document
