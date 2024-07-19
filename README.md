@@ -48,7 +48,8 @@ Check out the live demo <a href="https://Mayappa123.github.io/weatherApp/" targe
     Create a `.env` file in the root of your project and add your OpenWeatherMap API key:
 
     ```env
-    VITE_API_KEY=your_openweathermap_api_key
+
+    VITE_API_KEY = your_openweathermap_api_key
     ```
 
 5. Run the development server:
@@ -56,8 +57,7 @@ Check out the live demo <a href="https://Mayappa123.github.io/weatherApp/" targe
     ```bash
     npm run dev
     ```
-
-    The app will be available at `http://localhost:3000`.
+    The app will be available at `http://localhost:5173`.
 
 ## Usage
 
